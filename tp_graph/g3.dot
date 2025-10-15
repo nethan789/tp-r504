@@ -1,0 +1,7 @@
+graph {
+	0 [shape="box"];
+	B--G [label="4"];
+	A--C [label="1"];
+	A--B [label="2"];
+	C--B [label="3"];
+}
