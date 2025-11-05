@@ -13,7 +13,7 @@ jobs:
         run: sudo apt update && sudo apt install -y graphviz
 
       - name: Lancement Graphviz
-        run: ./run1.sh g4
+        run: /home/user/tp-r504/tp_graph/run1.sh g4
 
       - name: Upload SVG files
         uses: actions/upload-artifact@v4
