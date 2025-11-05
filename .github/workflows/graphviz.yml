@@ -1,20 +1,23 @@
 name: graphes
 on: [push]
+
 jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Installation de graphviz
-run: sudo apt update && sudo apt install -y graphviz
+  build:
+    runs-on: ubuntu-latest
 
-- name: Check out repository code
-uses: actions/checkout@v3
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
 
-- name: Lancement graphviz
-run: ./run1.sh g1
+      - name: Installation de Graphviz
+        run: sudo apt update && sudo apt install -y graphviz
 
-- name: Upload SVG files
-     uses: actions/upload-artifact@v4
-     with:
-       name: graphes-svg
-       path: 'artefact'
+      - name: Lancement Graphviz
+        run: ./run1.sh g1
+
+      - name: Upload SVG files
+        uses: actions/upload-artifact@v4
+        with:
+          name: graphes-svg
+          path: '*.svg'
+
